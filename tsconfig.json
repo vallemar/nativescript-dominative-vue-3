@@ -9,6 +9,7 @@
     "noEmitHelpers": true,
     "noEmitOnError": true,
     "skipLibCheck": true,
+    "allowJs": true,
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
