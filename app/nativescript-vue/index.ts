@@ -19,9 +19,10 @@ export interface App<HostElement = any> extends AppVue<HostElement> {
 }
 
 export function createApp(
-  rootComponent: Component<any, any, any, ComputedOptions, MethodOptions>
+  rootComponent: Component<any, any, any, ComputedOptions, MethodOptions>,
+  props?: any
 ): App<Element> {
-  const app = createAppVue(rootComponent) as App;
+  const app = createAppVue(rootComponent, props) as App;
   registerComponents(app);
   app._mount = app.mount;
   app.mount = (): ComponentPublicInstance => {
