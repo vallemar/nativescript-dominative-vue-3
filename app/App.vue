@@ -1,42 +1,48 @@
-
 <template>
-  <Page>
-    <Label> Page 1 </Label>
-  </Page>
+  <RootLayout>
+    <Page>
+      <StackLayout>
+        <Label> Page 1 </Label>
+      </StackLayout>
+    </Page>
+  </RootLayout>
 </template>
 
-<script>
-export default {
-  name: "app",
+<script setup lang="ts">
+import {getRootLayout, View} from "@nativescript/core";
+import {createApp} from "@dominative/vue";
+import Page from "./views/Page.vue"
 
-  beforeRouteEnter(to, from, next) {
-    // Do something before to enter to the route
-    next((vm) => {
-      // Do something once navigation is done
-      // Instead of `this`, use `vm`
-    });
-  },
 
-  beforeRouteLeave() {
-    // Do something before to leave the route
-    // You can use `this` inside of this hook
-  },
+setTimeout(() => {
 
-  beforeRouteUpdate() {
-    // Do something before to leave the route
-    // before redirecting to another route with same path
-    // You can use `this` inside of this hook
-  },
+  const app = createApp(Page)
+  const view: View = app.$render()
 
-  mounted() {
-    // Output current route object with name, path etc.
-    setTimeout(() => {
-      this.$routeTo("/page");
-      setTimeout(() => {
-        this.$routeBack();
-      }, 5000);
-    
-    }, 5000);
-  },
-};
+  getRootLayout()
+      .open(view, {
+        animation: {
+          enterFrom: {
+            opacity: 0,
+            translateY: 500,
+            duration: 500
+          },
+          exitTo: {
+            opacity: 0,
+            duration: 300
+          }
+        }
+      })
+      .catch(ex => {
+        console.log("ERRORRR")
+        console.error(ex)
+      })
+}, 2000);
 </script>
+
+
+
+
+
+
+
