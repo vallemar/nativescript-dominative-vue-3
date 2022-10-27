@@ -5,4 +5,6 @@
       </Label>
     </Page>
   </template>
-  
+ <script>
+ console.log("This Screen should be displayed!")
+ </script>

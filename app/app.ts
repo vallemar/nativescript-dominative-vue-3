@@ -1,4 +1,4 @@
-import { createApp } from "./nativescript-vue";
+import { createApp } from "@dominative/vue";
 //@ts-ignore
 import App from "./App.vue";
 //@ts-ignore
@@ -19,8 +19,8 @@ const routes = [
   },
 ];
 const app = createApp(App);
-install(app);
-app.mount();
+
+app.$run();
 const router = createRouter(
   { routes },
   {
