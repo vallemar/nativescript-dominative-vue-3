@@ -1,0 +1,1 @@
+[Playground Preview](https://stackblitz.com/edit/nativescript-stackblitz-templates-vjiyqt?file=app%2Fapp.ts&title=NativeScript%20Starter%20TypeScript)
