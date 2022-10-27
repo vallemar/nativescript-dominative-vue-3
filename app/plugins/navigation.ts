@@ -91,11 +91,11 @@ export async function $navigateTo(
     };
     targetPage.on("navigatedFrom", handler);
 
-    const dispose = targetPage.disposeNativeView;
-    targetPage.disposeNativeView = () => {
-      navigationApp.unmount();
-      dispose.call(targetPage);
-    };
+    // const dispose = targetPage.disposeNativeView;
+    // targetPage.disposeNativeView = () => {
+    //   navigationApp.unmount();
+    //   dispose.call(targetPage);
+    // };
 
     frame.navigate({
       ...options,
