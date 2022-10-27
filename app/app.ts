@@ -4,6 +4,7 @@ import App from "./App.vue";
 //@ts-ignore
 import Page from "./views/Page.vue";
 import { createRouter } from "nativescript-vue-router-extended";
+import { install } from "./plugins/navigation";
 //@ts-ignore
 Object.defineProperty(global, "__DEV__", { value: false });
 
@@ -18,10 +19,20 @@ const routes = [
   },
 ];
 const app = createApp(App);
+install(app);
 app.mount();
 const router = createRouter(
   { routes },
   {
     vm: app,
+    logger: console,
+    frame: app._container,
   }
 );
+router.setCurrentRoute({
+  component: app.component,
+  path: "/app",
+  meta: {
+    props: {},
+  },
+});

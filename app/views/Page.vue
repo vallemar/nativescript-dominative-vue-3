@@ -1,7 +1,7 @@
 <template>
     <Page>
       <Label>
-        Page 2
+        Page 5
       </Label>
     </Page>
   </template>

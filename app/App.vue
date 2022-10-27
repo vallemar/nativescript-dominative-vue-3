@@ -31,8 +31,10 @@ export default {
   mounted() {
     // Output current route object with name, path etc.
     setTimeout(() => {
-      console.log("going to page");
-      this.$routeTo("/page")
+      this.$routeTo("/page");
+      setTimeout(() => {
+        this.$routeBack();
+      }, 5000);
     
     }, 5000);
   },
