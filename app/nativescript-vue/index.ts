@@ -16,12 +16,10 @@ export function createApp(rootComponent: Component<any, any, any, ComputedOption
         Application.run({
             // @ts-ignore
             create: () => {
-                // @ts-ignore
-                document.documentElement.actionBarHidden = true;
-                return document.documentElement;
+                return document;
             },
         });
-        return app._mount(document.documentElement);
+        return app._mount(document);
     }
 
     return app;
