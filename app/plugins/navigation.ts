@@ -2,6 +2,7 @@ import { App, Component, isRef, Ref } from "@vue/runtime-core";
 import { Frame, NavigationEntry, Page } from "@nativescript/core";
 import { createApp } from "vue";
 import { NavigatedData } from "@nativescript/core";
+import { registerComponents } from "@dominative/vue";
 
 declare module "@vue/runtime-core" {
   interface ComponentCustomProperties {
@@ -80,6 +81,7 @@ export async function $navigateTo(
     }
 
     const navigationApp = createApp(target, options?.props);
+    registerComponents(navigationApp);
     const targetPage = navigationApp.mount(
       document.createDocumentFragment() as any
     ).$el as unknown as Page;
