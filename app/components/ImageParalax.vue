@@ -8,7 +8,6 @@ export type DataImages = {
 };
 
 const props = defineProps({
-  accelerometer: Object,
   dataImages: Object as PropType<DataImages>,
 });
 
