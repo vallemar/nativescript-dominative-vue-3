@@ -5,7 +5,19 @@
   </Page>
 </template>
 
+
+<!--<script lang="ts" setup>
+console.log("setupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetupsetup")
+import { useRouter } from "nativescript-vue-router-extended";
+const router = useRouter()
+setTimeout(() =>{
+  router.push('/page')
+}, 2000)
+</script>-->
+
+
 <script>
+
 export default {
   name: "app",
 
@@ -32,11 +44,12 @@ export default {
     // Output current route object with name, path etc.
     setTimeout(() => {
       this.$routeTo("/page");
-      setTimeout(() => {
-        this.$routeBack();
-      }, 5000);
-    
-    }, 5000);
-  },
+
+      /* setTimeout(() => {
+      this.$routeBack();
+    }, 2000);*/
+
+  }, 5000);
+},
 };
 </script>

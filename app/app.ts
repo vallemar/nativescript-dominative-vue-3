@@ -1,10 +1,10 @@
-import { createApp } from "./nativescript-vue";
-//@ts-ignore
-import App from "./App.vue";
-//@ts-ignore
-import Page from "./views/Page.vue";
+import {createApp} from "@dominative/vue";
 import { createRouter } from "nativescript-vue-router-extended";
-import { install } from "./plugins/navigation";
+
+import App from "./App.vue";
+import Page from "./views/Page.vue";
+
+
 //@ts-ignore
 Object.defineProperty(global, "__DEV__", { value: false });
 
@@ -18,17 +18,16 @@ const routes = [
     component: Page,
   },
 ];
-const app = createApp(App);
-install(app);
-app.mount();
 const router = createRouter(
-  { routes },
-  {
-    vm: app,
-    logger: console,
-    frame: app._container,
-  }
+    { routes },
 );
+
+const app = createApp(App);
+app.use(router)
+app.mount();
+
+
+
 router.setCurrentRoute({
   component: app.component,
   path: "/app",

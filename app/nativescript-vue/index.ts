@@ -23,13 +23,19 @@ export function createApp(
   props?: any
 ): App<Element> {
   const app = createAppVue(rootComponent, props) as App;
+  console.log("createAppcreateAppcreateAppcreateAppcreateAppcreateAppcreateApp")
   registerComponents(app);
   app._mount = app.mount;
   app.mount = (): ComponentPublicInstance => {
+    console.log("mountmountmountmountmountmountmountmountmountmountmountmount")
+
+
     Application.run({
       // @ts-ignore
       create: () => {
+
         // @ts-ignore
+
         document.documentElement.actionBarHidden = true;
         return document;
       },
