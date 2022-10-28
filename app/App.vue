@@ -1,42 +1,22 @@
-
 <template>
   <Page>
     <Label> Page 1 </Label>
   </Page>
 </template>
 
-<script>
-export default {
-  name: "app",
+<script lang="ts" setup>
 
-  beforeRouteEnter(to, from, next) {
-    // Do something before to enter to the route
-    next((vm) => {
-      // Do something once navigation is done
-      // Instead of `this`, use `vm`
-    });
-  },
+import {useRouter} from "nativescript-vue-router-extended"
 
-  beforeRouteLeave() {
-    // Do something before to leave the route
-    // You can use `this` inside of this hook
-  },
 
-  beforeRouteUpdate() {
-    // Do something before to leave the route
-    // before redirecting to another route with same path
-    // You can use `this` inside of this hook
-  },
+const router = useRouter()
+setTimeout(() => {
+  router.push("/page", {transition: {name: "flip "}})
 
-  mounted() {
-    // Output current route object with name, path etc.
-    setTimeout(() => {
-      this.$routeTo("/page");
-      setTimeout(() => {
-        this.$routeBack();
-      }, 5000);
-    
-    }, 5000);
-  },
-};
+  setTimeout(() => {
+    router.back()
+  }, 5000);
+
+}, 2000);
+
 </script>

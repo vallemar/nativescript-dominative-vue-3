@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@dominative/vue": "^0.0.4-alpha.3",
+    "@dominative/vue": "0.0.4-alpha.4",
     "@nativescript/core": "~8.3.5",
     "@triniwiz/nativescript-accelerometer": "4.0.3",
     "@vue/compiler-sfc": "^3.2.40",
