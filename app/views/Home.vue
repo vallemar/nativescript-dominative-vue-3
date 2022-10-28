@@ -12,7 +12,6 @@
 
  const router = useRouter()
  setTimeout(() =>{
-   console.log()
-   router.push("/example")
+
  },1000)
  </script>

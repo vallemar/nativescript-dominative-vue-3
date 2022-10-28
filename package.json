@@ -12,7 +12,8 @@
     "nativescript-vue-router-extended": "https://github.com/ammarahm-ed/nativescript-vue-router-extended",
     "pinia": "^2.0.23",
     "undom-ng": "^1.0.0",
-    "vue": "^3.2.40"
+    "vue": "^3.2.40",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@nativescript/android": "8.3.1",

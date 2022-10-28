@@ -8,6 +8,7 @@ import { isIOS } from '@nativescript/core';
 import ImageParalax from '@/components/ImageParalax.vue';
 import Nav from '@/components/Nav.vue';
 import {useAccelerometerStore} from "@/plugins/stores/Accelerometer.store";
+import {useCommonStore} from "~/plugins/stores/Common.store";
 
 const accelerometerStore = useAccelerometerStore()
 
@@ -48,6 +49,10 @@ const onLoadedTab = (args: any) => {
     args.object.android.tabLayout.setVisibility(android.view.View.GONE);
   }
 };
+const commonStore = useCommonStore()
+import { useStore } from 'vuex'
+const store = useStore()
+
 
 </script>
 
