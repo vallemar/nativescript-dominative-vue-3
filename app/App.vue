@@ -1,3 +1,3 @@
 <template>
-  <router-view defaultRoute="/test" />
+  <RouterView defaultRoute="/"></RouterView>
 </template>
