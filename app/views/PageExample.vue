@@ -1,10 +1,10 @@
 <template>
     <Page>
       <Label>
-        Page 5
+        Example
       </Label>
     </Page>
   </template>
  <script setup>
- console.log("This Screen should be displayed!")
+
  </script>
