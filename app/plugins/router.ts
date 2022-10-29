@@ -26,7 +26,10 @@ const routes = [
 ];
 
 const router = createRouter(
-    {routes},
+  { routes },
+  {
+    logger: console,
+  }
 );
 
 export {

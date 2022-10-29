@@ -1,8 +1,8 @@
 <template>
   <Page actionBarHidden="true">
     <StackLayout>
-      <Label> Test </Label>
-      <Label> {{ store.state.count }} </Label>
+      <Label style="font-size: 50px;">Test</Label>
+      <Label style="font-size: 50px;">{{ store.state.count }}</Label>
     </StackLayout>
 
   </Page>
