@@ -194,10 +194,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@dominative/vue@^0.0.4-alpha.4":
-  version "0.0.4-alpha.4"
-  resolved "https://registry.yarnpkg.com/@dominative/vue/-/vue-0.0.4-alpha.4.tgz#fae652a403171425d2a296adafbd9fe2531693fc"
-  integrity sha512-NB5RhJig3xrG0ApCNaRXMDFH3R7HiZdtC+7xMmxsvHhtIlkIgRAMD3UnxqEOa+kK3qn1+Z8XqMmEK31lz2K0Mw==
+"@dominative/vue@^0.0.4-alpha.6":
+  version "0.0.4-alpha.6"
+  resolved "https://registry.yarnpkg.com/@dominative/vue/-/vue-0.0.4-alpha.6.tgz#d984ef63e3d1d0af44de07eba411327ab1138f32"
+  integrity sha512-uLP5rL5GTbwA13DL0d6tY2u3HWRH3paM8YRJDsbpNoB2Ik2l5tbHow1PKX37tSofvanFlUHGid32WvpO3XsMAA==
 
 "@hookun/parse-animation-shorthand@^0.1.4":
   version "0.1.4"
@@ -1894,7 +1894,7 @@ nanoid@^3.3.4:
 
 "nativescript-vue-router-extended@https://github.com/ammarahm-ed/nativescript-vue-router-extended":
   version "1.1.8"
-  resolved "https://github.com/ammarahm-ed/nativescript-vue-router-extended#a4129638b6d97d76108bbbcf09a87c52d41bbe10"
+  resolved "https://github.com/ammarahm-ed/nativescript-vue-router-extended#96dd1d08893df2e87e29d87badd83e2d6e41ff77"
   dependencies:
     nativescript-vue "^2.9.0"
     vue-router "^4.0.11"

@@ -1,17 +1,16 @@
-import {createApp} from "@dominative/vue";
-import {router} from "@/plugins/router";
+import { createApp, usePlugin } from "@dominative/vue";
+import { router } from "@/plugins/router";
 import App from "./App.vue";
-import {createPinia} from "pinia";
-import {vuexStore} from "~/plugins/stores/Vuex.store";
+import { createPinia } from "pinia";
+import { vuexStore } from "~/plugins/stores/Vuex.store";
 
-Object.defineProperty(global, "__DEV__", {value: false});
+Object.defineProperty(global, "__DEV__", { value: false });
 
 const pinia = createPinia();
-
+usePlugin(router);
+usePlugin(pinia);
+usePlugin(vuexStore);
 
 const app = createApp(App);
-app.use(router)
-app.use(pinia)
-app.use(vuexStore)
-app.$run(document);
-
+//@ts-ignore
+app.$run();

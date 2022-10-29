@@ -11,6 +11,8 @@
     "skipLibCheck": true,
     "allowJs": true,
     "lib": ["es2017", "dom"],
+    "downlevelIteration": true,
+    "maxNodeModuleJsDepth": 5,
     "baseUrl": ".",
     "paths": {
       "~/*": ["app/*"],

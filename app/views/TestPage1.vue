@@ -9,25 +9,11 @@
 </template>
 <script lang="ts" setup>
 import {useRouter} from "nativescript-vue-router-extended";
-import {useCommonStore} from "~/plugins/stores/Common.store";
+import { useCommonStore } from "~/plugins/stores/Common.store";
+import { useStore } from 'vuex'
+
 const commonStore = useCommonStore()
 commonStore.countTest = 85;
-
-import { useStore } from 'vuex'
 const store = useStore()
 store.state.count = 55
-
-const router = useRouter()
-
-setTimeout(() => {
-  router.push("/parallax")
-  setTimeout(() => {
-    //this.$routeBack();
-  }, 2000);
-
-}, 1000)
-
-
-
-
 </script>
