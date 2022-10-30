@@ -1184,10 +1184,10 @@ dlv@^1.1.3:
   resolved "https://registry.yarnpkg.com/dlv/-/dlv-1.1.3.tgz#5c198a8a11453596e751494d49874bc7732f2e79"
   integrity sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==
 
-dominative@^0.0.5-alpha.2:
-  version "0.0.5-alpha.2"
-  resolved "https://registry.yarnpkg.com/dominative/-/dominative-0.0.5-alpha.2.tgz#897df962f79db58e0ea0dfcedf887fd49a3b8925"
-  integrity sha512-u808lD0eT3M/JvBJe5ucqY8rHti3sPy0yl8ZxkC4Uet8bM9Zu59lt1YKcZN9h9a2sNu1jJWY9iO/okO+uZWOwA==
+dominative@^0.0.5-alpha.3:
+  version "0.0.5-alpha.3"
+  resolved "https://registry.yarnpkg.com/dominative/-/dominative-0.0.5-alpha.3.tgz#dc9a1231442c7a7ab27e1293bba6ff178fdf39df"
+  integrity sha512-qOwsZVrkRChBUV0QigS+wOlvXwa4JsdtaxrJfZWSyrkmtIjM6yvQtEcUjd1Zuo+byb0rYoprjdQh0tkNXPCtSQ==
 
 dotenv-defaults@^2.0.2:
   version "2.0.2"
