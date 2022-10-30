@@ -4,14 +4,16 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@dominative/vue": "0.0.3-alpha.1",
+    "@dominative/vue": "0.0.5-alpha.1",
     "@nativescript/core": "~8.3.5",
     "@triniwiz/nativescript-accelerometer": "4.0.3",
     "@vue/compiler-sfc": "^3.2.40",
     "dominative": "^0.0.5-alpha.2",
+    "nativescript-vue-router-extended": "https://github.com/ammarahm-ed/nativescript-vue-router-extended",
     "pinia": "^2.0.23",
     "undom-ng": "^1.0.0",
-    "vue": "^3.2.40"
+    "vue": "^3.2.40",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@nativescript/android": "8.3.1",

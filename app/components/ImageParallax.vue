@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { PropType } from 'vue';
-import {useAccelerometerStore} from "@/plugins/stores/Accelerometer.store";
+import {useAccelerometerStore} from "@/plugins/stores/pinia/Accelerometer.store";
 
 export type DataImages = {
   bg: string;
