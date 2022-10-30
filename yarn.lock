@@ -194,10 +194,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@dominative/vue@0.0.5-alpha.1":
-  version "0.0.5-alpha.1"
-  resolved "https://registry.yarnpkg.com/@dominative/vue/-/vue-0.0.5-alpha.1.tgz#99e3c032ebe822715d1e4493b1f5e7a9d0896215"
-  integrity sha512-cErZQA9Mxi2vF9jbi+gy1FwMYp0YEXbCh7BV0Fh0uzo6QPEvECanuwwX/bFs0k3uy9FnALFIlD80RX43+JME6A==
+"@dominative/vue@^0.0.5-alpha.2":
+  version "0.0.5-alpha.2"
+  resolved "https://registry.yarnpkg.com/@dominative/vue/-/vue-0.0.5-alpha.2.tgz#5ef07803eabf520877998519c78fb58facc166a0"
+  integrity sha512-ECV6h5KXa8fq2CTsk1ketdA1JXJYzxPnhYgp/n22thR0KFw8H7xz9t9ska0Cwj/SO/jVF4DqZRvTVkToQGZGdQ==
 
 "@hookun/parse-animation-shorthand@^0.1.4":
   version "0.1.4"

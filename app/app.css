@@ -7,3 +7,23 @@ Button {
   background-color: white;
   border-radius: 50;
 }
+
+Page.gradient {
+  background: rgb(101, 173, 241);
+  background: linear-gradient(144deg, rgba(101, 173, 241, 1) 26%, rgba(14, 21, 39, 1) 82%);
+}
+
+/*
+    Background Colors
+*/
+.bg-accent-primary {
+  background-color: #63b0f5;
+}
+
+.bg-accent-secondary {
+  background-color: #c0defa;
+}
+
+.bg-accent-tertiary {
+  background-color: #dbecfc;
+}

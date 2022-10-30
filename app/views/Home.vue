@@ -14,6 +14,9 @@ const router = useRouter();
 const navigateParallax = () => {
   router.push("/parallax")
 }
+const navigateRootLayout = () => {
+  router.push("/parallax")
+}
 
 </script>
 
@@ -29,6 +32,7 @@ const navigateParallax = () => {
         <TextField v-model="commonStore.nameApp"/>
         <Button class="primary mt-4" @tap="count++">Tap me! {{ count }} | I am ref() 😊</Button>
         <Button class="primary mt-4" @tap="navigateParallax">Navigate To Parallax!</Button>
+        <Button class="primary mt-4" @tap="router.push('/root_layout')">Navigate To RootLayout!</Button>
 
         <Label class="mt-8 text-xl text-center animate-color p-4 rounded-full text-white">⚡ Native list with recycled
           items ⚡</Label>
@@ -69,12 +73,7 @@ const navigateParallax = () => {
   </Page>
 </template>
 
-<style>
-Page.gradient {
-  background: rgb(101, 173, 241);
-  background: linear-gradient(144deg, rgba(101, 173, 241, 1) 26%, rgba(14, 21, 39, 1) 82%);
-}
-
+<style scoped>
 .animate-color {
   animation: colorchange 3s infinite;
 }
@@ -93,4 +92,6 @@ Page.gradient {
     background-color: #E9489C;
   }
 }
+
+
 </style>

@@ -1,4 +1,4 @@
-import {createApp, usePlugin, applyPlugins} from '@dominative/vue';
+import {createApp, addGlobalPlugin, applyPlugins} from '@dominative/vue';
 import App from './App.vue';
 import {createPinia} from "pinia";
 import {vuexStore} from "~/plugins/stores/vuex/Vuex.store";
@@ -8,10 +8,11 @@ Object.defineProperty(global, '__DEV__', {value: false});
 
 const pinia = createPinia()
 
+
 const app = createApp(App);
-usePlugin(pinia)
-usePlugin(vuexStore)
-usePlugin(router)
+addGlobalPlugin(pinia)
+addGlobalPlugin(vuexStore)
+addGlobalPlugin(router)
 
 applyPlugins(app)
 app.$run();
