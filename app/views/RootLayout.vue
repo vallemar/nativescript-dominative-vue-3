@@ -1,125 +1,34 @@
 <script lang="ts" setup>
-import {createNativeView} from "@dominative/vue"
-import BottomSheet from "@/components/root-layout/BottomSheet.vue"
-import Modal from "@/components/root-layout/Modal.vue"
-import Snackbar from "@/components/root-layout/Snackbar.vue"
-import Sidebar from "@/components/root-layout/Sidebar.vue"
-import {CoreTypes, getRootLayout} from "@nativescript/core";
-
-const DEFAULT_ANIMATION_CURVE = CoreTypes.AnimationCurve.cubicBezier(0.17, 0.89, 0.24, 1.11);
-
-const showBottomSheet = () => {
-  const nsView = createNativeView(BottomSheet)
-
-  getRootLayout()
-      .open(nsView, {
-        shadeCover: {
-          color: '#282C34',
-          opacity: 0.7,
-          tapToClose: true,
-        },
-        animation: {
-          enterFrom: {
-            translateY: 500,
-            duration: 300,
-            curve: DEFAULT_ANIMATION_CURVE,
-          },
-          exitTo: {
-            translateY: 500,
-            duration: 300,
-            curve: DEFAULT_ANIMATION_CURVE,
-          },
-        },
-      }).catch(ex => console.error(ex))
-}
-const showModal = () => {
-  const nsView = createNativeView(Modal)
-
-  getRootLayout()
-      .open(nsView, {
-        shadeCover: {
-          color: '#282C34',
-          opacity: 0.7,
-          tapToClose: true,
-        },
-        animation: {
-          enterFrom: {
-            translateY: -200,
-            duration: 300,
-            curve: DEFAULT_ANIMATION_CURVE,
-          },
-          exitTo: {
-            translateY: -200,
-            opacity: 0,
-            duration: 300,
-            curve: DEFAULT_ANIMATION_CURVE,
-          },
-        },
-      }).catch(ex => console.error(ex))
-}
-
-const showSnackbar = () => {
-  const nsView = createNativeView(Snackbar)
-
-  getRootLayout()
-      .open(nsView, {
-        shadeCover: {
-          color: '#282C34',
-          opacity: 0.7,
-          tapToClose: true,
-        },
-        animation: {
-          enterFrom: {
-            translateY: -300,
-            duration: 300,
-            curve: DEFAULT_ANIMATION_CURVE,
-          },
-          exitTo: {
-            translateY: -300,
-            duration: 300,
-            curve: DEFAULT_ANIMATION_CURVE,
-          },
-        },
-      }).catch(ex => console.error(ex))
-}
 
 
-const showSidebar = () => {
-  const nsView = createNativeView(Sidebar)
+import {useRootLayout} from "~/use/useRootLayout";
 
-  getRootLayout()
-      .open(nsView, {
-        shadeCover: {
-          color: '#282C34',
-          opacity: 0.7,
-          tapToClose: true,
-        },
-        animation: {
-          enterFrom: {
-            translateX: -300,
-            duration: 300,
-            curve: DEFAULT_ANIMATION_CURVE,
-          },
-          exitTo: {
-            translateX: -300,
-            duration: 300,
-            curve: DEFAULT_ANIMATION_CURVE,
-          },
-        },
-      }).catch(ex => console.error(ex))
-}
+const rootLayout = useRootLayout()
 
+const rootLayoutExamples = [
+  {img: "~/assets/images/bottomsheet.png", showMethod: rootLayout.showBottomSheet, text: "Open BottomSheet"},
+  {img: "~/assets/images/modal.png", showMethod: rootLayout.showModal, text: "Open Modal"},
+  {img: "~/assets/images/snackbar.png", showMethod: rootLayout.showSnackbar, text: "Open Snackbar"},
+  {img: "~/assets/images/sidebar.png", showMethod: rootLayout.showSidebar, text: "Open Sidebar"},
+]
 </script>
 
 <template>
   <Page class="gradient" actionBarHidden="true">
     <RootLayout>
-      <GridLayout rows="auto, auto, auto, auto" class="p-4">
-        <Button class="mt-4" row="0" @tap="showBottomSheet">Open BottomSheet</Button>
-        <Button class="mt-4" row="1" @tap="showModal">Open Modal</Button>
-        <Button class="mt-4" row="2" @tap="showSnackbar">Open Snackbar</Button>
-        <Button class="mt-4" row="3" @tap="showSidebar">Open Sidebar</Button>
-      </GridLayout>
+      <ScrollView>
+        <StackLayout class="p-4">
+          <Label class="my-4 text-2xl text-white font-bold">RootLayout Vue 3 🪄</Label>
+          <GridLayout :rows="rootLayoutExamples.map(rootLayout => ('auto')).join(', ')">
+            <GridLayout rows="auto, auto" :row="index" class="rounded-xl p-4 mt-2 bg-accent-secondary"
+                        v-for="(rootLayout, index) in rootLayoutExamples" :key="index">
+              <Image row="0" height="100" :src="rootLayout.img"></Image>
+              <Label row="1" class="mt-4 bg-white rounded-full px-4 py-2 text-center text-lg text-black"
+                     @tap="rootLayout.showMethod">{{ rootLayout.text }}</Label>
+            </GridLayout>
+          </GridLayout>
+        </StackLayout>
+      </ScrollView>
     </RootLayout>
   </Page>
 </template>
