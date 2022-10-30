@@ -37,7 +37,7 @@ const navigateRootLayout = () => {
 
         <FlexboxLayout flexWrap="wrap">
           <Label class="text-lg">Hello</Label>
-          <Label class="text-lg ml-1 bg-white rounded-full px-1">{{ commonStore.nameApp }}</Label>
+          <Label class="text-lg ml-1 bg-white rounded-full px-1 color-accent-primary">{{ commonStore.nameApp }}</Label>
           <Label class="text-lg">, </Label>
           <Label class="text-lg">string from Pinia 🍍 store!</Label>
         </FlexboxLayout>
@@ -67,20 +67,23 @@ const navigateRootLayout = () => {
             :capture="[count]"
         >
           <template #odd="{ item, index }">
-            <StackLayout col="0" class="text-white">
-              <Label class="text-lg">Template Odd</Label>
-              <Label class=" mt-2" textWrap="true">Index: {{ index }}, dataItem: {{ item.name }}</Label>
-              <Label class=" mt-2" textWrap="true">Current count on tap me: {{ count }}</Label>
-            </StackLayout>
-            <Button col="1" height="36" class="text-sm" @tap="items.splice(index, 1)">Remove</Button>
+            <Label row="0" class="text-lg">Template Odd</Label>
+            <Label row="1" class=" mt-2" textWrap="true">Index: {{ index }}, dataItem: {{ item.name }}, count: {{
+                count
+              }}</Label>
+            <Image stretch="aspectFill" row="0" horizontalAlignment="right" rowSpan="2"
+                   src="~/assets/images/50-odd.jpg"
+                   height="50" width="50" class="rounded-full"></Image>
           </template>
           <template #even="{ item, index }">
-            <StackLayout col="0" class="text-white">
-              <Label class="text-lg">Template Even</Label>
-              <Label class=" mt-2" textWrap="true">Index: {{ index }}, dataItem: {{ item.name }}</Label>
-              <Label class=" mt-2" textWrap="true">Current count on tap me: {{ count }}</Label>
-            </StackLayout>
-            <Button col="1" height="36" class="text-sm" @tap="items.splice(index, 1)">Remove</Button>
+            <Label row="0" horizontalAlignment="right" class="text-lg">Template Even</Label>
+            <Label row="1" horizontalAlignment="right" class=" mt-2" textWrap="true">Index: {{ index }}, dataItem:
+              {{ item.name }}, count: {{
+                count
+              }}</Label>
+            <Image stretch="aspectFill" row="0" horizontalAlignment="left" rowSpan="2"
+                   src="~/assets/images/50-even.jpg"
+                   height="50" width="50" class="rounded-full"></Image>
           </template>
         </v-list>
 
