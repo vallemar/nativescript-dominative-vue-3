@@ -37,9 +37,9 @@ const navigateRootLayout = () => {
 
         <FlexboxLayout flexWrap="wrap">
           <Label class="text-lg">Hello</Label>
-          <Label class="text-lg ml-1 bg-white rounded-full px-1 color-accent-primary">{{ commonStore.nameApp }}</Label>
+          <Label v-if="commonStore.nameApp" class="text-lg ml-1 bg-white rounded-full px-1 color-accent-primary">{{ commonStore.nameApp }}</Label>
           <Label class="text-lg">, </Label>
-          <Label class="text-lg">string from Pinia 🍍 store!</Label>
+          <Label class="text-lg">I am a string updated by Pinia 🍍 store!</Label>
         </FlexboxLayout>
 
         <TextField class="input-text mt-1" v-model="commonStore.nameApp"/>
