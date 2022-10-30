@@ -17,7 +17,7 @@ const rootLayoutExamples = [
   <Page class="gradient" actionBarHidden="true">
     <RootLayout>
       <ScrollView>
-        <StackLayout >
+        <StackLayout>
           <Label class="px-4 mt-6 text-2xl text-white font-bold">RootLayout Vue 3 🪄</Label>
           <GridLayout class="p-4" :rows="rootLayoutExamples.map(rootLayout => ('auto')).join(', ')">
             <GridLayout rows="auto, auto" :row="index" class="rounded-xl p-4 mt-2 bg-accent-secondary"

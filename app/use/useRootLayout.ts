@@ -100,12 +100,12 @@ export const useRootLayout = () => {
                     enterFrom: {
                         translateX: -300,
                         duration: 300,
-                        curve: DEFAULT_ANIMATION_CURVE,
+                       /* curve: DEFAULT_ANIMATION_CURVE,*/
                     },
                     exitTo: {
                         translateX: -300,
                         duration: 300,
-                        curve: DEFAULT_ANIMATION_CURVE,
+                       /* curve: DEFAULT_ANIMATION_CURVE,*/
                     },
                 },
             }).catch(ex => console.error(ex))

@@ -25,7 +25,13 @@ const navigateRootLayout = () => {
     }
   })
 }
-
+const navigateListView = () => {
+  router.push("/list", {
+    transition: {
+      name: "slideLeft"
+    }
+  })
+}
 </script>
 
 <template>
@@ -46,8 +52,9 @@ const navigateRootLayout = () => {
         <Button class="primary mt-4" @tap="count++">Tap me! {{ count }} | I am ref() 😊</Button>
 
         <Button class="primary mt-4 text-base" @tap="navigateParallax" height="40">Navigate To Parallax</Button>
-        <Button class="primary mt-4 text-base" @tap="navigateRootLayout" height="40">Navigate To RootLayout
-        </Button>
+        <Button class="primary mt-4 text-base" @tap="navigateRootLayout" height="40">Navigate To RootLayout</Button>
+        <Button class="primary mt-4 text-base" @tap="navigateListView" height="40">Navigate To ListView</Button>
+
 
         <Label class="mt-8 text-xl text-center animate-color p-3 rounded-full text-white">⚡ Native list with recycled
           items ⚡</Label>
