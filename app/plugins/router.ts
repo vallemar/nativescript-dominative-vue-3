@@ -1,4 +1,4 @@
-import {createRouter} from "nativescript-vue-router-extended";
+import {createRouter} from "router-vue-native";
 import Home from "@/views/Home.vue";
 import Parallax from "@/views/Parallax.vue";
 import RootLayout from "@/views/RootLayout.vue";
