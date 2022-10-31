@@ -25,7 +25,7 @@ const count = ref(0);
         </Button>-->
       </StackLayout>
       <v-list
-          class="mt-2"
+          class="mt-2 bg-transparent"
           :items="items"
           itemTemplateSelector="$index % 2 ? 'odd' : 'even'"
           :wrapper="ListWrapper"

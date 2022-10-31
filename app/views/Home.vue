@@ -41,14 +41,14 @@ const navigateListView = () => {
 
       <StackLayout class="p-4 mt-2">
 
-        <FlexboxLayout flexWrap="wrap">
-          <Label class="text-lg">Hello</Label>
-          <Label v-if="commonStore.nameApp" class="text-lg ml-1 bg-white rounded-full px-1 color-accent-primary">{{ commonStore.nameApp }}</Label>
-          <Label class="text-lg">, </Label>
-          <Label class="text-lg">I am a string updated by Pinia 🍍 store!</Label>
+        <FlexboxLayout class="text-lg" flexWrap="wrap">
+          <Label>Hello</Label>
+          <Label v-if="commonStore.nameApp" class="ml-1 bg-white rounded-full px-1 color-accent-primary">{{ commonStore.nameApp }}</Label>
+          <Label>, </Label>
+          <Label>I am a string updated by Pinia 🍍 store!</Label>
         </FlexboxLayout>
 
-        <TextField class="input-text mt-1" v-model="commonStore.nameApp"/>
+        <TextField class="input-text android:mt-1 ios:my-4 ios:border-b-1 ios:border-white" v-model="commonStore.nameApp"/>
         <Button class="primary mt-4" @tap="count++">Tap me! {{ count }} | I am ref() 😊</Button>
 
         <Button class="primary mt-4 text-base" @tap="navigateParallax" height="40">Navigate To Parallax</Button>
@@ -66,7 +66,7 @@ const navigateListView = () => {
         </GridLayout>
 
         <v-list
-            class="mt-2"
+            class="mt-2 bg-transparent"
             :items="items"
             itemTemplateSelector="$index % 2 ? 'odd' : 'even'"
             :wrapper="ListWrapper"
