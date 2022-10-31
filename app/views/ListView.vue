@@ -2,7 +2,7 @@
 import {ref} from 'vue';
 import ListWrapper from '@/components/ListWrapper.vue';
 
-const numberItems = 10000;
+const numberItems = 1000000;
 const data = []
 for (let i = 0; i < numberItems; i++) {
   data.push({id: i})
@@ -18,11 +18,11 @@ const count = ref(0);
     <StackLayout>
       <Label class="px-4 pt-6 text-2xl text-white font-bold">ListView with {{ items.length }} items ⚡</Label>
       <StackLayout class="px-4 mt-8">
-        <Button class="primary text-base" @tap="count++">Tap me! {{ count }} | I am ref(😊) </Button>
+        <Button class="primary text-base" @tap="count++">Tap me! {{ count }} | I am ref(😊)</Button>
         <Label class="my-2 text-center text-white text-lg">Reactive update data in native list</Label>
-<!--        <Button height="35" width="auto" class="mr-1 text-sm" col="0" @tap="items.push({ id: 0 })">➕ Add
-          item!
-        </Button>-->
+        <!--        <Button height="35" width="auto" class="mr-1 text-sm" col="0" @tap="items.push({ id: 0 })">➕ Add
+                  item!
+                </Button>-->
       </StackLayout>
       <v-list
           class="mt-2 bg-transparent"

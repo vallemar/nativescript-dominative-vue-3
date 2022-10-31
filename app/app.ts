@@ -1,4 +1,5 @@
 import {createApp, addGlobalPlugin} from '@dominative/vue';
+import {document} from 'dominative';
 import App from './App.vue';
 import {createPinia} from "pinia";
 import {vuexStore} from "~/plugins/stores/vuex/Vuex.store";
@@ -13,4 +14,4 @@ addGlobalPlugin(vuexStore)
 addGlobalPlugin(router)
 
 const app = createApp(App);
-app.$run();
+app.$run(document.createElement("ContentView"));
