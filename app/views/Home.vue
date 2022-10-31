@@ -3,7 +3,7 @@ import {onMounted, ref} from 'vue';
 import {isAndroid, ObservableArray, View} from '@nativescript/core';
 import ListWrapper from '@/components/ListWrapper.vue';
 import {useCommonStore} from "~/plugins/stores/pinia/Common.store";
-import {useRouter} from "nativescript-vue-router-extended";
+import {useRouter} from "router-vue-native";
 
 
 const count = ref(0);
