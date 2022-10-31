@@ -41,7 +41,7 @@ const navigateListView = () => {
 
       <StackLayout class="p-4 mt-2">
 
-        <FlexboxLayout class="text-lg" flexWrap="wrap">
+        <FlexboxLayout class="text-lg text-white" flexWrap="wrap">
           <Label>Hello</Label>
           <Label v-if="commonStore.nameApp" class="ml-1 bg-white rounded-full px-1 color-accent-primary">{{ commonStore.nameApp }}</Label>
           <Label>, </Label>

@@ -6,6 +6,7 @@ Button {
   font-size: 18;
   background-color: white;
   border-radius: 50;
+  color: #191c1f;
 }
 
 Page.gradient {
