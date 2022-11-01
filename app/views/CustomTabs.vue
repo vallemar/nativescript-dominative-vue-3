@@ -56,7 +56,7 @@ watch(bottomSelected, () => {
             style="box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2)"
         >
           <FlexboxLayout v-for="(item, i) in headerTabsData" :col="i" :key="i" height="100%" width="100%"
-                         justifyContent="space-around"
+                         justifyContent="center"
                          alignItems="center">
             <Label
                 class="text-center text-black"
