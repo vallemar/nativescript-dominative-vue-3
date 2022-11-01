@@ -28,9 +28,17 @@ const dataImages = [
 
 
 onMounted(() => {
+  let currentX = 0;
+  let currentY = 0;
   startAccelerometerUpdates(
       (data: AccelerometerData) => {
-        accelerometerStore.accelerometer = data;
+        currentX += 0.2 * (data.x - currentX)
+        currentY += 0.2 * (data.y - currentY)
+        accelerometerStore.accelerometer = {
+          x: currentX,
+          y: currentY,
+          z: 0
+        };
       },
       {
         sensorDelay: 'game',

@@ -3,6 +3,7 @@ import Home from "@/views/Home.vue";
 import Parallax from "@/views/Parallax.vue";
 import RootLayout from "@/views/RootLayout.vue";
 import ListView from "@/views/ListView.vue";
+import CustomTabs from "@/views/CustomTabs.vue";
 
 
 const routes = [
@@ -21,6 +22,10 @@ const routes = [
     {
         path: "/list",
         component: ListView,
+    },
+    {
+        path: "/tabs",
+        component: CustomTabs,
     }
 ];
 
