@@ -1,8 +1,12 @@
 import {View} from "@nativescript/core";
 import {computed, ref} from "vue";
 
+export type OptionTabs = {
+    canGrowBackgroundHeight?: boolean,
+    canGrowBackgroundWidth?: boolean
+}
 
-export const useTabsAnimation = (data: any) => {
+export const useTabsAnimation = (data: any, option?: OptionTabs) => {
     const itemViews: View[] = []
     let init = false;
 
@@ -77,7 +81,7 @@ export const useTabsAnimation = (data: any) => {
                     y: backgroundView.originY
                 },
                 width: widthBackground,
-                height: heightItem + paddingHeight,
+                height: option?.canGrowBackgroundHeight === false ? backgroundView.getActualSize().height : (heightItem + paddingHeight),
                 duration: 250
             })
         }

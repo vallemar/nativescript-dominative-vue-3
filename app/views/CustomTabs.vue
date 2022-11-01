@@ -7,9 +7,9 @@ const {
   tabsData: bottomTabsData, background: backgroundBottom, wrapLayout: wrapLayoutBottom,
   loadedItems: loadedItemsBottom, onChangeTab: onChangeTabBottom, selected: bottomSelected
 } = useTabsAnimation([
-  {img: 'https://cdn-icons-png.flaticon.com/512/2549/2549900.png', text: 'Home', selected: false},
-  {img: 'https://cdn-icons-png.flaticon.com/512/1077/1077035.png', text: 'Social', selected: false},
-  {img: 'https://cdn-icons-png.flaticon.com/512/54/54481.png', text: 'User', selected: false},
+  {img: 'https://cdn-icons-png.flaticon.com/512/2549/2549900.png', text: 'Home'},
+  {img: 'https://cdn-icons-png.flaticon.com/512/1077/1077035.png', text: 'Health'},
+  {img: 'https://cdn-icons-png.flaticon.com/512/54/54481.png', text: 'User'},
 ])
 
 
@@ -17,10 +17,10 @@ const {
   tabsData: headerTabsData, background: headerBackground, wrapLayout: headerWrapLayout,
   loadedItems: headerLoadedItems, onChangeTab: headerOnChangeTab, selected: headerSelected
 } = useTabsAnimation([
-  {text: 'Home', selected: false},
-  {text: 'Health', selected: false},
-  {text: 'User', selected: false},
-])
+  {text: 'Buy'},
+  {text: 'Social'},
+  {text: 'Explore'},
+], {canGrowBackgroundHeight: false})
 
 watch(bottomSelected, () => {
   if (bottomSelected.value.index !== 0) {
@@ -67,8 +67,8 @@ watch(bottomSelected, () => {
               :key="i"
           ></Label>
         </FlexboxLayout>
-        <StackLayout ref="headerBackground" class="rounded-full opacity-20" height="40" width="70"
-                     backgroundColor="#65ADF1"></StackLayout>
+        <StackLayout verticalAlignment="bottom" ref="headerBackground" class="rounded opacity-80" height="6" width="70"
+                     backgroundColor="#0F172A"></StackLayout>
       </GridLayout>
       <GridLayout row="1">
         <GridLayout :visibility="bottomSelected.index === 0 ? 'visible' : 'collapse'" rows="100, *">
