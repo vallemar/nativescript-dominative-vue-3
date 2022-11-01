@@ -49,24 +49,23 @@ watch(bottomSelected, () => {
   <Page class="gradient" actionBarHidden="true" ref="page">
     <GridLayout rows="60, * , 85">
       <GridLayout row="0" ref="headerWrapLayout">
-        <FlexboxLayout
+        <GridLayout
             width="100%"
             height="100%"
-            justifyContent="space-around"
-            alignItems="center"
             :columns="bottomTabsData.map((x) => '*').join(', ')"
             style="box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2)"
         >
-          <Label
-              class="text-center text-black"
-              v-for="(item, i) in headerTabsData"
-              @tap="headerOnChangeTab(i, $event)" @layoutChanged="headerLoadedItems"
-              :id="i"
-              :col="i"
-              :text="item.text"
-              :key="i"
-          ></Label>
-        </FlexboxLayout>
+          <FlexboxLayout v-for="(item, i) in headerTabsData" :col="i" :key="i" height="100%" width="100%"
+                         justifyContent="space-around"
+                         alignItems="center">
+            <Label
+                class="text-center text-black"
+                @tap="headerOnChangeTab(i, $event)"
+                @layoutChanged="headerLoadedItems"
+                :text="item.text"
+            ></Label>
+          </FlexboxLayout>
+        </GridLayout>
         <StackLayout verticalAlignment="bottom" ref="headerBackground" class="rounded opacity-80" height="6" width="70"
                      backgroundColor="#0F172A"></StackLayout>
       </GridLayout>
