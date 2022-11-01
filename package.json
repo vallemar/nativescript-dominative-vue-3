@@ -8,9 +8,9 @@
     "@nativescript/core": "~8.3.5",
     "@triniwiz/nativescript-accelerometer": "4.0.3",
     "@vue/compiler-sfc": "^3.2.40",
-    "dominative": "^0.0.6-alpha.1",
-    "router-vue-native": "2.0.0",
+    "dominative": "^0.0.6-alpha.2",
     "pinia": "^2.0.23",
+    "router-vue-native": "2.0.0",
     "undom-ng": "^1.0.0",
     "vue": "^3.2.40",
     "vuex": "^4.0.2"
