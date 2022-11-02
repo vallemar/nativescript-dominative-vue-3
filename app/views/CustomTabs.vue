@@ -23,14 +23,14 @@ const {
   {text: 'TS'},
   {text: 'React'},
   {text: 'Angular'},
-], {canGrowBackgroundHeight: false})
+], {canGrowBackgroundHeight: false, paddingWidth: -10})
 
 watch(bottomSelected, () => {
   if (headerWrapLayout.value) {
     if (bottomSelected.value.index !== 0) {
       headerWrapLayout.value.animate({
         translate: {
-          y: -60,
+          y: -headerWrapLayout.value.getActualSize().height - 10,
           x: 0
         },
         duration: 250
@@ -53,19 +53,20 @@ watch(bottomSelected, () => {
 <template>
   <Page class="gradient" actionBarHidden="true" ref="page">
     <GridLayout rows="60, * , 85">
+      <!-- Header Tabs   -->
       <ScrollView row="0" orientation="horizontal" scrollBarIndicatorVisible="false">
         <GridLayout
             height="100%"
             :columns="headerTabsData.map(() => '90').join(', ')"
             style="box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2)"
+            ref="headerWrapLayout"
         >
           <FlexboxLayout v-for="(item, i) in headerTabsData" :col="i" :key="i" height="100%"
                          justifyContent="center"
-                         alignItems="center">
+                         alignItems="center"
+                         @tap="headerOnChangeTab(i, $event)" @layoutChanged="headerLoadedItems">
             <Label
                 class="text-center text-black"
-                @tap="headerOnChangeTab(i, $event)"
-                @layoutChanged="headerLoadedItems"
                 :text="item.text"
             ></Label>
           </FlexboxLayout>
@@ -74,6 +75,7 @@ watch(bottomSelected, () => {
                        backgroundColor="#0F172A"></StackLayout>
         </GridLayout>
       </ScrollView>
+      <!-- Body  -->
       <GridLayout row="1">
         <GridLayout :visibility="bottomSelected.index === 0 ? 'visible' : 'collapse'" rows="100, *">
           <Label row="0" horizontalAlignment="center" verticalAlignment="center" class="text-2xl text-white">View
@@ -94,6 +96,7 @@ watch(bottomSelected, () => {
             {{ bottomTabsData[2].text }}</Label>
         </GridLayout>
       </GridLayout>
+      <!-- Bottom Tabs  -->
       <GridLayout row="2" ref="bottomWrapLayout">
         <FlexboxLayout
             width="100%"

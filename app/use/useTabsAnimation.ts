@@ -3,13 +3,21 @@ import {computed, ref} from "vue";
 
 export type OptionTabs = {
     canGrowBackgroundHeight?: boolean,
-    canGrowBackgroundWidth?: boolean
+    canGrowBackgroundWidth?: boolean,
+    paddingWidth?: number,
+    paddingHeight?: number,
 }
 
 const scaleSelected = 1.1;
 const durationAnimation = 250;
 
-export const useTabsAnimation = (data: any, option?: OptionTabs) => {
+export const useTabsAnimation = (data: any, options?: OptionTabs) => {
+    options = Object.assign({
+        canGrowBackgroundHeight: true,
+        canGrowBackgroundWidth: true,
+        paddingWidth: 55,
+        paddingHeight: 20,
+    }, options)
     const itemViews: View[] = []
     let init = false;
 
@@ -31,7 +39,7 @@ export const useTabsAnimation = (data: any, option?: OptionTabs) => {
         setTimeout(() => {
             if (!init) {
                 init = true
-                onChangeTab(0, args, true)
+                onChangeTab(0, args, false)
             }
         }, 0)
     }
@@ -51,7 +59,7 @@ export const useTabsAnimation = (data: any, option?: OptionTabs) => {
         });
     }
 
-    const onChangeTab = (index, $event, init = false) => {
+    const onChangeTab = (index, $event, animated = true) => {
         const currentSelected = tabsData.value.findIndex(x => x.selected)
 
         if (currentSelected !== index) {
@@ -61,8 +69,8 @@ export const useTabsAnimation = (data: any, option?: OptionTabs) => {
             const backgroundView: View = background.value
             const itemView: View = $event.object
 
-            const paddingWidth = 55
-            const paddingHeight = 20
+            const paddingWidth = options.paddingWidth
+            const paddingHeight = options.paddingHeight
             const widthItem = itemView.getActualSize().width
             const heightItem = itemView.getActualSize().height
             const widthBackground = itemView.getActualSize().width + paddingWidth
@@ -70,15 +78,8 @@ export const useTabsAnimation = (data: any, option?: OptionTabs) => {
             const itemLocation = itemView.getLocationRelativeTo(backgroundView)
 
             const x = translateXBackground + itemLocation.x - (backgroundView.getActualSize().width / 2) + (widthItem / 2)
-            const newHeightBackground = option?.canGrowBackgroundHeight === false ? backgroundView.getActualSize().height : (heightItem + paddingHeight);
-            if (init) {
-                itemView.scaleX = scaleSelected
-                itemView.scaleY = scaleSelected
-                backgroundView.translateX = x
-                backgroundView.translateY = backgroundView.originY
-                backgroundView.width = widthBackground
-                backgroundView.height = newHeightBackground
-            } else {
+            const newHeightBackground = options.canGrowBackgroundHeight ? (heightItem + paddingHeight) : backgroundView.getActualSize().height;
+            if (animated) {
                 itemView.animate({
                     scale: {
                         x: scaleSelected,
@@ -95,6 +96,13 @@ export const useTabsAnimation = (data: any, option?: OptionTabs) => {
                     height: newHeightBackground,
                     duration: durationAnimation
                 })
+            } else {
+                itemView.scaleX = scaleSelected
+                itemView.scaleY = scaleSelected
+                backgroundView.translateX = x
+                backgroundView.translateY = backgroundView.originY
+                backgroundView.width = widthBackground
+                backgroundView.height = newHeightBackground
             }
 
         }
