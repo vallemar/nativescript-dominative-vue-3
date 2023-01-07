@@ -5,12 +5,12 @@
   "private": true,
   "dependencies": {
     "@nativescript-community/vue": "^0.0.6-alpha.1",
-    "@nativescript/core": "~8.3.5",
+    "@nativescript/core": "^8.4.3",
     "@triniwiz/nativescript-accelerometer": "4.0.3",
     "@vue/compiler-sfc": "^3.2.40",
     "dominative": "^0.0.7-alpha.2",
     "pinia": "^2.0.23",
-    "router-vue-native": "2.0.0",
+    "router-vue-native": "^2.0.0",
     "undom-ng": "^1.0.2",
     "vue": "^3.2.45",
     "vuex": "^4.0.2"
